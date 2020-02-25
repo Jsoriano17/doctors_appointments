@@ -1,2 +1,13 @@
-<h1>Appointments#index</h1>
-<p>Find me in app/views/appointments/index.html.erb</p>
+
+<div class="container">
+<h1><%= "#{@user.full_name}"%>'s Appointments:</h1>
+<% @user.appointments.each do |appointment| %>
+<h2><%= appointment.date%></h2>
+<p>Dr. <%= appointment.doctor.last_name%><p>
+ <%= link_to 'Delete Doctor', user_appointment_path(@user, appointment), method: :delete%>
+<% end %>
+<br>
+<h2>Create Appointment</h2>
+<%= link_to 'Add Appointment', new_user_appointment_path(@user) %>
+</div>
+

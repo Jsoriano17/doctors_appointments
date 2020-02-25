@@ -13,7 +13,7 @@ roles = ['patient', 'doctor']
       last_name: Faker::Name.last_name
   )
  
-  2.times do 
+  3.times do 
     user = User.create(
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name

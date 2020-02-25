@@ -1,9 +1,11 @@
-<h1>Users</h1>
+<div class="container"> 
+<h1>- Users -</h1>
+<h2><%= @users.length <= 0 ? "No Users" : "" %></h2> 
 <% @users.each do |user| %>
-    <h2><%= link_to user.full_name, user_path(user)%><h2>
+    <h2>~ <%= link_to user.full_name, user_path(user)%><h2>
     <%= link_to 'Edit User', edit_user_path(user)%>
     <%= link_to 'Delete User', user, method: :delete%>
     <br>
     <br>
 <% end %>
-
+</div>

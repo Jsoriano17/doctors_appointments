@@ -1,6 +1,8 @@
-<h1>Doctors</h1>
+<div class="container">
+<h1>- Doctors -</h1>
+<h2><%= @doctors.length <= 0 ? "No Doctors" : "" %></h2> 
 <% @doctors.each do |doctor| %>
-    <h2><%= link_to "Dr. #{doctor.last_name}", doctor_path(doctor)%><h2>
+    <h2>~ <%= link_to "Dr. #{doctor.last_name}", doctor_path(doctor)%><h2>
     <%= link_to 'Edit Doctor', edit_doctor_path(doctor)%>
     <%= link_to 'Delete Doctor', doctor, method: :delete%>
     <br>
